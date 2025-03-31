@@ -1,11 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPromoPopupOpen, setIsPromoPopupOpen] = useState(true);
 
-  const closePromoPopup = () => {
+  // Fecha o popup automaticamente após 8 segundos
+  useEffect(() => {
+    if (isPromoPopupOpen) {
+      const timer = setTimeout(() => {
+        setIsPromoPopupOpen(false);
+      }, 8000);
+      return () => clearTimeout(timer);
+    }
+  }, [isPromoPopupOpen]);
+
+  const closePromoPopup = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setIsPromoPopupOpen(false);
   };
 
@@ -180,7 +194,9 @@ function App() {
         <div className="modal-overlay promo-overlay" onClick={closePromoPopup}>
           <div
             className="modal promo-modal"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
           >
             <h3 className="promo-title">
               Quer ter um site profissional para seu evento ou empresa?
@@ -190,7 +206,11 @@ function App() {
             </p>
             <div className="promo-contact">
               <p className="promo-name">Saulo Pavanello</p>
-              <a href="https://wa.me/5551993392983" className="whatsapp-btn">
+              <a
+                href="https://wa.me/5551993392983"
+                className="whatsapp-btn"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <span className="whatsapp-icon">📱</span> (51) 99339-2983
               </a>
             </div>

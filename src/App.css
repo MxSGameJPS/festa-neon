@@ -1287,6 +1287,61 @@ main {
   .cta-button-container {
     padding: 1.5rem 1rem;
   }
+
+  .promo-modal {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .promo-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .promo-message {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .promo-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .modal-overlay {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  .promo-modal {
+    max-width: 90%;
+    padding: 1.5rem;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    border-width: 1px;
+  }
+
+  .promo-modal::before {
+    opacity: 0.3;
+    filter: blur(8px);
+  }
+
+  .promo-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 5px var(--neon-green);
+  }
+
+  .promo-message {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .promo-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 0 5px var(--neon-pink);
+  }
 }
 
 @keyframes gradient-shift {
@@ -1342,40 +1397,66 @@ main {
     font-size: 1.2rem;
   }
 
-  .ticket-category {
-    padding: 1.2rem 1rem;
-    border-radius: 12px;
-  }
-
-  .person-icon {
-    width: 40px;
-    height: 80px;
-    margin-bottom: 0.8rem;
-  }
-
-  .ticket-label {
-    font-size: 1.1rem;
-  }
-
-  .ticket-value {
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
-  }
-
-  .ticket-value-door {
-    font-size: 1rem;
-  }
-
-  .buy-btn {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    width: 90%;
-  }
-
   .event-date {
     top: 10px;
     right: 10px;
+  }
+
+  /* Estilos aprimorados para o modal em dispositivos muito pequenos */
+  .modal-overlay {
+    /* Remover completamente o backdrop-filter em telas menores */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .modal {
+    /* Simplificar efeitos para dispositivos móveis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  }
+
+  .modal::before {
+    /* Desabilitar efeitos de gradiente animado em dispositivos móveis */
+    display: none;
+  }
+
+  .promo-modal {
+    max-width: 85%;
+    padding: 1.2rem;
+    border-radius: 12px;
+    background: rgba(29, 15, 54, 0.95);
+    border: 1px solid var(--neon-green);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+  }
+
+  .promo-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    text-shadow: none;
+  }
+
+  .promo-message {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .promo-name {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-shadow: none;
+  }
+
+  .promo-contact .whatsapp-btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    /* Simplificar efeitos */
+    box-shadow: 0 0 5px rgba(37, 211, 102, 0.5);
+  }
+
+  .promo-modal .close-btn {
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
   }
 }
 
