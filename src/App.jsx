@@ -150,7 +150,14 @@ function App() {
             <h3>Comprar Ingressos</h3>
             <p>Entre em contato pelo WhatsApp:</p>
             <button className="whatsapp-btn">
-              <span className="whatsapp-icon">📱</span> Falar com Moisés
+              <span className="whatsapp-icon">📱</span>{" "}
+              <a
+                href="https://api.whatsapp.com/send/?phone=5551991454337&text&type=phone_number&app_absent=0.me/5551993392983"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Falar com Moisés
+              </a>
             </button>
             <button className="close-btn" onClick={() => setIsModalOpen(false)}>
               Fechar
