@@ -59,6 +59,12 @@ function App() {
             <div className="neon-text">NEON</div>
           </div>
 
+          <div className="cta-button-container">
+            <button className="buy-btn" onClick={() => setIsModalOpen(true)}>
+              COMPRE SEU INGRESSO ANTECIPADO E GANHE UM PRESENTE!
+            </button>
+          </div>
+
           <div className="djs-container">
             <div className="dj-profile dj-moises">
               <div className="dj-circle">
