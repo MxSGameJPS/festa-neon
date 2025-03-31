@@ -1159,7 +1159,7 @@ main {
   }
 
   .event-date {
-    top: 100px;
+    top: 15px;
     right: 10px;
   }
 
@@ -1371,6 +1371,11 @@ main {
     font-size: 0.9rem;
     letter-spacing: 1px;
     width: 90%;
+  }
+
+  .event-date {
+    top: 10px;
+    right: 10px;
   }
 }
 
