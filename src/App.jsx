@@ -5,6 +5,10 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPromoPopupOpen, setIsPromoPopupOpen] = useState(true);
 
+  const closePromoPopup = () => {
+    setIsPromoPopupOpen(false);
+  };
+
   return (
     <div className="app">
       <div className="background-images">
@@ -173,10 +177,7 @@ function App() {
       )}
 
       {isPromoPopupOpen && (
-        <div
-          className="modal-overlay promo-overlay"
-          onClick={() => setIsPromoPopupOpen(false)}
-        >
+        <div className="modal-overlay promo-overlay" onClick={closePromoPopup}>
           <div
             className="modal promo-modal"
             onClick={(e) => e.stopPropagation()}
@@ -193,10 +194,7 @@ function App() {
                 <span className="whatsapp-icon">📱</span> (51) 99339-2983
               </a>
             </div>
-            <button
-              className="close-btn"
-              onClick={() => setIsPromoPopupOpen(false)}
-            >
+            <button className="close-btn" onClick={closePromoPopup}>
               Fechar
             </button>
           </div>
